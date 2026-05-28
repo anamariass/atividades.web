@@ -23,6 +23,10 @@ app.get('/erro', (req, res) => {
 });
 
 
+app.get('/inicio', (req, res) => {
+  res.redirect('/');
+});
+
 app.listen(
     3000, 
     () => console.log(`Servidor em execução`)
