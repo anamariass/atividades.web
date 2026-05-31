@@ -1,1 +1,1 @@
-Atividade de Desenvolvimento Web realizada pela dupla Ana Maria e Eduarda Lira
+Atividade de Desenvolvimento Web realizada pelas alunas: Ana Maria e Eduarda Lira
