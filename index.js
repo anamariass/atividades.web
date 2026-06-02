@@ -27,8 +27,25 @@ app.get('/inicio', (req, res) => {
   res.redirect('/');
 });
 
-app.listen(
+app.get('/usuarios/:id', (req, res) => {
+  const id = req.params.id;
+  res.send(`Usuario: ${id}`);
+});
+
+
+app.get('/produtos/:nome', (req, res) => {
+  const nome = req.params.nome;
+  res.send(`produto: ${nome}`);
+});
+
+app.get('/filmes/:id/:nome', (req, res) => {
+  const id = req.params.id;
+  const nome = req.params.nome;
+
+  res.send(`Id do filme: ${id}<br>Nome do filme: ${nome}`);
+});
+
+app.listen( 
     3000, 
     () => console.log(`Servidor em execução`)
 );
-
