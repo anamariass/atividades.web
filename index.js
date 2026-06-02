@@ -45,7 +45,25 @@ app.get('/filmes/:id/:nome', (req, res) => {
   res.send(`Id do filme: ${id}<br>Nome do filme: ${nome}`);
 });
 
-app.listen( 
-    3000, 
-    () => console.log(`Servidor em execução`)
+app.get('/buscar', (req, res) => {
+  console.log(req.query.nome);
+  res.send('Buscando por: ' + req.query.nome);
+});
+
+app.get('/produtos', (req, res) => {
+  const categoria = req.query.categoria;
+  const pagina = req.query.pagina;
+
+  res.send(`Categoria: ${categoria} | Página: ${pagina}`);
+});
+
+app.get('/usuarios', (req, res) => {
+  const idade= req.query.idade;
+
+  res.send(`Filtrando usuarios com a idade: ${idade} `);
+});
+
+app.listen(
+  3000,
+  () => console.log('Servidor em execução')
 );
