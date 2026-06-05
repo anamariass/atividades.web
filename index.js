@@ -1,6 +1,12 @@
 
 const express = require('express');
+const { engine } = require('express-handlebars');
+
 const app = express();
+
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 
 app.get('/', (req, res) => {
@@ -63,7 +69,18 @@ app.get('/usuarios', (req, res) => {
   res.send(`Filtrando usuarios com a idade: ${idade} `);
 });
 
+app.get('/usuarios', (req, res) => {
+  const idade= req.query.idade;
+
+  res.send(`Filtrando usuarios com a idade: ${idade} `);
+});
+
+app.get('/', (req, res) => {
+    res.render('home')
+})
+
 app.listen(
   3000,
   () => console.log('Servidor em execução')
 );
+
