@@ -96,6 +96,13 @@ app.get('/filmes', (req, res) => {
     })
 })
 
+app.get('/mensagens', (req, res) => {
+    res.render('mensagens', {
+        logado: true,
+        admin: false,
+    })
+})
+ 
 app.listen(
   3000,
   () => console.log('Servidor em execução')

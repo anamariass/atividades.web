@@ -1,0 +1,17 @@
+<h1>Exemplos de Condicionais</h1>
+
+{{#if logado}}
+  <p>Usuário está logado.</p>
+{{else}}
+  <p>Usuário não está logado.</p>
+{{/if}}
+
+{{#if admin}}
+  <p>Você é administrador.</p>
+{{else}}
+  <p>Você não é administrador.</p>
+{{/if}}
+
+{{#unless admin}}
+  <p>Esta mensagem aparece porque o usuário NÃO é administrador.</p>
+{{/unless}}
