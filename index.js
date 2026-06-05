@@ -113,6 +113,45 @@ app.get('/filmess', (req, res) => {
    ]
   })
 })
+
+const videos = [
+  {
+    titulo: 'Aprendendo Express',
+    criador: 'Ana Maria e Eduarda',
+    descricao: 'Curso básico de Express.js',
+    visualizacoes: 1200,
+    curtidas: 350,
+    hashtag: '#nodejs',
+    videoUrl: 'https://youtube.com',
+    thumbnailUrl: 'https://via.placeholder.com/300x180'
+  }
+];
+
+app.get('/videos', (req, res) => {
+  res.render('videos', { videos });
+});
+
+app.get('/videos/cadastrar', (req, res) => {
+  res.render('cadastrar');
+});
+
+app.post('/videos', (req, res) => {
+  const novoVideo = {
+    titulo: req.body.titulo,
+    criador: req.body.criador,
+    descricao: req.body.descricao,
+    visualizacoes: req.body.visualizacoes,
+    curtidas: req.body.curtidas,
+    hashtag: req.body.hashtag,
+    videoUrl: req.body.videoUrl,
+    thumbnailUrl: req.body.thumbnailUrl
+  };
+
+  videos.push(novoVideo);
+
+  res.redirect('/videos');
+});
+
  
 app.listen(
   3000,
