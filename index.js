@@ -86,6 +86,16 @@ app.get('/perfil', (req, res) => {
     })
 })
 
+app.get('/filmes', (req, res) => {
+    res.render('filmes',{
+      filmes: [
+      'Vingadores: Ultimato',
+      'O Poderoso Chefão',
+      'Cidade de Deus',
+      'Avatar']
+    })
+})
+
 app.listen(
   3000,
   () => console.log('Servidor em execução')
