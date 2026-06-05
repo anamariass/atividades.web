@@ -103,6 +103,17 @@ app.get('/mensagens', (req, res) => {
     })
 })
  
+app.get('/filmess', (req, res) => {
+    res.render('filmess', {
+    filmess:[ 
+    { nome: 'Vingadores: Ultimato', ano: 2019 },
+    { nome: 'Cidade de Deus', ano: 2002 },
+    { nome: 'Avatar', ano: 2009 },
+    { nome: 'O Poderoso Chefão', ano: 1972 }
+   ]
+  })
+})
+ 
 app.listen(
   3000,
   () => console.log('Servidor em execução')
